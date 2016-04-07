@@ -2,6 +2,7 @@
     <script src="https://fb.me/react-0.14.8.js"></script>
     <script src="https://fb.me/react-dom-0.14.8.js"></script>
     <script src="https://fb.me/JSXTransformer-0.12.2.js "></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 
 <body>
@@ -9,16 +10,16 @@
 
 <script type="text/jsx">
     // Define a react component class
-    var HelloWorld = React.createClass({
+    var Badge = React.createClass({
         render: function() {
-            return <div>
-                Hello World
-            </div>
+           return <button class="btn btn-primary" type="button">
+                Messages <span class="badge">4</span>
+           </button>
         }
     });
 
     // Ask react to render this class
-    var element = React.createElement(HelloWorld);
+    var element = React.createElement(Badge);
 
     // When we ask react to render this class,
     // we will tell it where to place the element in the DOM
