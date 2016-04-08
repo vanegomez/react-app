@@ -6,6 +6,13 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="target">
+
+            </div>
+        </div>
+    </div>
 </body>
 
 <script type="text/jsx">
@@ -18,15 +25,35 @@
         }
     });
 
+    var Thumbnail = React.createClass({
+        render: function() {
+            return <div className="col-sm-6 col-md-4">
+                <div className="thumbnail">
+                    <img src={this.props.imageUrl} alt="..."></img>
+                    <div className="caption">
+                        <h3>{this.props.header}</h3>
+                        <p>{this.props.description}</p>
+                        <p>
+                            <Badge title={this.props.title} number={this.props.number} />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    });
+
     var options = {
-        title: 'Inbox',
+        title: 'See Tutorials',
         number: 32,
+        header: 'Learn React',
+        description: 'React is fantastic new library for makings fast, dynamic pages. React is fantastic new library for makings fast, dynamic pages.',
+        imageUrl: 'http://formatjs.io/img/react.svg'
     };
 
     // Ask react to render this class
-    var element = React.createElement(Badge, options);
+    var element = React.createElement(Thumbnail, options);
 
     // When we ask react to render this class,
     // we will tell it where to place the element in the DOM
-    ReactDOM.render(element, document.body);
+    ReactDOM.render(element, document.querySelector('.target'));
 </script>
